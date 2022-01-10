@@ -5,15 +5,15 @@ variable "region" {
   default = "ap-southeast-1"
 }
 
-variable "access_key" {
-  type    = string
-  default = "AKIA43BLJW3LW4E5DN6D"
-}
+#variable "access_key" {
+#  type    = string
+#  default = "AKIA43BLJW3LW4E5DN6D"
+#}
 
-variable "secret_key" {
-  type    = string
-  default = "+p+9R7wuy94X3RmCeHIv88CDG3z6Rh0DPHbetWbu"
-}
+#variable "secret_key" {
+#  type    = string
+#  default = "+p+9R7wuy94X3RmCeHIv88CDG3z6Rh0DPHbetWbu"
+#}
 
 #variable "env_instance" {
 #  type    = string
