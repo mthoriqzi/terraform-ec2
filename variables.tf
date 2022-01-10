@@ -40,7 +40,7 @@ variable "ami_instance" {
 
   # for production
   # default = "subnet-0cc65e4da5c8678e8"
-} 
+#} 
 
 #variable "subnet_private_instance" {
  # type    = string
