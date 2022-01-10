@@ -28,10 +28,10 @@ resource "aws_instance" "agriaku" {
   ami                         = var.ami_instance
   # Direct Internet Gateway Public
   #subnet_id                   = var.subnet_private_instance
-  vpc_security_group_ids      = [
-    var.sg_default,
+  #vpc_security_group_ids      = [
+   # var.sg_default,
    # aws_security_group.secgroup_instances.id
-  ]
+  #]
   key_name                    = var.keypair_instance
   
   # Core 2 CPU | RAM 4 GB
