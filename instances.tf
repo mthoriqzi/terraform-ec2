@@ -27,7 +27,7 @@ resource "aws_instance" "agriaku" {
   # Ubuntu 18.04 LTS
   ami                         = var.ami_instance
   # Direct Internet Gateway Public
-  subnet_id                   = var.subnet_private_instance
+  #subnet_id                   = var.subnet_private_instance
   vpc_security_group_ids      = [
     var.sg_default,
     aws_security_group.secgroup_instances.id
@@ -52,13 +52,11 @@ resource "aws_instance" "agriaku" {
     sudo hostnamectl set-hostname agriaku
     sudo timedatectl set-timezone Asia/Jakarta
     sudo apt-get update
-    #sudo apt-get install -y salt-minion salt-ssh salt-syndic salt-cloud salt-api awscli
-    #sed -i "16s/#master: salt/master: 10.255.245.205/" /etc/salt/minion
-    #systemctl restart salt-minion
+   
   _EOF
 
   tags = {
     Name                      = "agriaku"
-    Environment               = var.env_instance
+   # Environment               = var.env_instance
   }
 }
