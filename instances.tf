@@ -30,7 +30,7 @@ resource "aws_instance" "agriaku" {
   #subnet_id                   = var.subnet_private_instance
   vpc_security_group_ids      = [
     var.sg_default,
-    aws_security_group.secgroup_instances.id
+   # aws_security_group.secgroup_instances.id
   ]
   key_name                    = var.keypair_instance
   
