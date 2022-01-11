@@ -7,12 +7,12 @@ variable "region" {
 
 #variable "access_key" {
 #  type    = string
-#  default = "AKIA43BLJW3LW4E5DN6D"
+#  default = ""
 #}
 
 #variable "secret_key" {
 #  type    = string
-#  default = "+p+9R7wuy94X3RmCeHIv88CDG3z6Rh0DPHbetWbu"
+#  default = ""
 #}
 
 #variable "env_instance" {
