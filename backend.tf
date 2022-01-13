@@ -1,7 +1,7 @@
 terraform{
   backend "s3" {
     bucket = "pipelineoik"
-    key = "dev_1/terraform_state"
+    key = "${var.cloud_name}/terraform_state"
     region = "ap-southeast-1"
   }
 }
