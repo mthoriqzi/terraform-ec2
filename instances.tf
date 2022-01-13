@@ -23,27 +23,24 @@
 ##  }
 ##}
 
-resource "aws_instance" "agriaku" {
-  # Ubuntu 18.04 LTS
+resource "aws_instance" "agriaku_ec2" {
+  # Ubuntu 20.04 LTS
   ami                         = var.ami_instance
   # Direct Internet Gateway Public
   #subnet_id                   = var.subnet_private_instance
   #vpc_security_group_ids      = [
-   # var.sg_default,
-   # aws_security_group.secgroup_instances.id
+   # var.sg_default
   #]
   key_name                    = var.keypair_instance
-  
+  count                       = 1
   # Core 2 CPU | RAM 4 GB
-  instance_type               = "t2.micro"
+  instance_type               = var.instance_type
   associate_public_ip_address = "false"
-
-  # for infraops
-  #private_ip                  = "10.255.245.12"
+  #private_ip                  = var.private_ip
 
   root_block_device {
-    volume_size = "100"
-    volume_type = "gp2"
+    volume_size = var.volume_size
+    volume_type = var.volume_type
     #iops        = "100"
   }
 
@@ -52,11 +49,10 @@ resource "aws_instance" "agriaku" {
     sudo hostnamectl set-hostname agriaku
     sudo timedatectl set-timezone Asia/Jakarta
     sudo apt-get update
-   
   _EOF
 
   tags = {
-    Name                      = "agriaku"
-   # Environment               = var.env_instance
+    Name                      = var.cloud_name
   }
 }
+
