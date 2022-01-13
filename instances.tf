@@ -23,7 +23,7 @@
 ##  }
 ##}
 
-resource "aws_instance" "agriaku_ec2_a" {
+resource "aws_instance" "agriaku_ec2_c" {
   # Ubuntu 20.04 LTS
   ami                         = var.ami_instance
   # Direct Internet Gateway Public
